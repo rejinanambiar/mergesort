@@ -51,12 +51,12 @@ public class MergeSort {
 	/**
 	 * Method to sort and merge the arrays
 	 * 
-	 * @param arr
+	 * @param inputArray
 	 * @param leftArray
 	 * @param rightArray
 	 * @return
 	 */
-	private static int[] merge(int[] arr, int[] leftArray, int[] rightArray) {
+	private static int[] merge(int[] inputArray, int[] leftArray, int[] rightArray) {
 		int k = 0;
 		int i = 0;
 		int j = 0;
@@ -64,12 +64,12 @@ public class MergeSort {
 		//Compare the left and right arrays and update the main array
 		while (i < leftArray.length && j < rightArray.length) {
 			if (leftArray[i] < rightArray[j]) {
-				arr[k] = leftArray[i];
+				inputArray[k] = leftArray[i];
 				i++;
 				k++;
 				;
 			} else {
-				arr[k] = rightArray[j];
+				inputArray[k] = rightArray[j];
 				j++;
 				k++;
 			}
@@ -77,18 +77,18 @@ public class MergeSort {
 		
 		//Copy the remaining elements in the left array into the main array
 		while (i < leftArray.length) {
-			arr[k] = leftArray[i];
+			inputArray[k] = leftArray[i];
 			i++;
 			k++;
 		}
 
 		//Copy the remaining elements in the right array into the main array
 		while (j < rightArray.length) {
-			arr[k] = rightArray[j];
+			inputArray[k] = rightArray[j];
 			j++;
 			k++;
 		}
-		return arr;
+		return inputArray;
 	}
 
 	/**
